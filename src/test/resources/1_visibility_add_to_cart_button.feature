@@ -1,5 +1,6 @@
 Feature: Add to card button is displayed
 
+  @ignore
   Scenario Outline: Verification of enabled Add to cart button for products than is NOT in cart
     Given I open ebay site
     When I open product details page for "<request>"

@@ -11,7 +11,8 @@ import org.junit.runner.RunWith;
         plugin = {
                 "pretty", "json:target/Cucumber.json",
                 "html:target/cucumber-html-report"
-        }
+        },
+        tags = "~@ignore"
 )
 public class RunAcceptanceTest {
     @BeforeClass
