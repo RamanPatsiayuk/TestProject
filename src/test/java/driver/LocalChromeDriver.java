@@ -3,6 +3,7 @@ package driver;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,8 +16,10 @@ public class LocalChromeDriver {
     public static void init(){
         System.out.println("Chrome driver");
         System.setProperty("webdriver.chrome.driver", filePath);
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--start-maximized");
+        driver = new ChromeDriver(chromeOptions);
+        //driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
