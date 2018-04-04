@@ -16,9 +16,10 @@ public class LocalChromeDriver {
     public static void init(){
         System.out.println("Chrome driver");
         System.setProperty("webdriver.chrome.driver", filePath);
-        ChromeOptions chromeOptions = new ChromeOptions();
+        driver = new ChromeDriver();
+        /*ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
-        driver = new ChromeDriver(chromeOptions);
+        driver = new ChromeDriver(chromeOptions);*/
         //driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
