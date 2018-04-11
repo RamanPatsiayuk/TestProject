@@ -13,16 +13,27 @@
         <maven-surefire-plugin>2.21.0</maven-surefire-plugin>
     </properties>
 
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>bintray-epam-reportportal</id>
+            <name>bintray</name>
+            <url>http://dl.bintray.com/epam/reportportal</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>1.2.4</version>
+            <version>1.2.5</version>
         </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>1.2.4</version>
+            <version>1.2.5</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -35,6 +46,26 @@
             <artifactId>hamcrest-all</artifactId>
             <version>1.3</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>agent-java-cucumber</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>client-java</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>commons-model</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>agent-java-cucumber2</artifactId>
+            <version>4.0.0</version>
         </dependency>
     </dependencies>
 
@@ -64,7 +95,7 @@
                         <!-- Where you want to store downloaded zip files -->
                         <downloadedZipFileDirectory>src/main/resources/web_driver/zips</downloadedZipFileDirectory>
                         <!-- Location of a custom repository map -->
-                        <customRepositoryMap>src/main/resources/RepositoryMap.xml</customRepositoryMap>
+                        <customRepositoryMap>${basedir}/src/main/resources/RepositoryMap.xml</customRepositoryMap>
                         <!-- Operating systems you want to download binaries for (Only valid options are: windows, linux, osx) -->
                         <operatingSystems>
                             <windows>true</windows>

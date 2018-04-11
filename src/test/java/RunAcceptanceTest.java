@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         strict = true,
-        plugin = {
-                "pretty", "json:target/Cucumber.json",
+        plugin = {"pretty", "com.epam.reportportal.cucumber.StepReporter",
+                "json:target/Cucumber.json",
                 "html:target/cucumber-html-report"
         },
         tags = "~@ignore"
