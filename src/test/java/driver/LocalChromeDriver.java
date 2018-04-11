@@ -11,8 +11,8 @@ import java.util.concurrent.TimeUnit;
 public class LocalChromeDriver {
 
     public static WebDriver driver;
+    private static final String filePath = "src/main/resources/web_driver/chromedriver.exe";
     //private static final String filePath = "src/main/resources/web_driver/chromedriver";
-    private static final String filePath = "/usr/bin/chromedriver";
 
     public static void init(){
         System.out.println("Chrome driver");
